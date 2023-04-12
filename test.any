@@ -20,7 +20,7 @@ NUMPROCS=$7
 # Don't change anything else
 #
 
-CMD="echo $SALT $HASH $ALPHABET $PWDLEN |  mpiexec -n $NUMPROCS ./hash_cracker"
+CMD="echo $SALT $HASH $ALPHABET $PWDLEN |  mpiexec -n $NUMPROCS --oversubscribe ./hash_cracker"
 echo ${ANSWER} > $PROG.correct
 
 echo "running: $CMD"
