@@ -181,17 +181,18 @@ void ix_to_password(char *alphabet, int pwd_length, int ix, char *guess) {
 // returns -1 if not found, if found, returns index immediately
 int FindHash(int my_rank, char *salt, char *target_hash, char *alphabet, int pwd_length, int first_pwd_ix, int last_pwd_ix) {
    char guess[pwd_length+2];
-   char *genhash = NULL;
+   char genhash[bufsize];
 
    fprintf(stderr,"FindHash not finished\n");
 
    for (int ix=first_pwd_ix; ix <= last_pwd_ix; ++ix) {
       // finish me
-      // generate the "guess" that goes with that index...
 
-      if (genhash) ++guess[0]; // to shut up the compiler, don't use this code!!!
+      // 1: generate the "guess" that goes with that index...
 
-      // do the real work to turn salt/guess into the generated hash in genhash
+
+      // 2: do the real work to turn salt/guess into the generated hash in genhash
+      // using this function:
       // sha_hashonly(guess, salt, genhash);
 
       if (debug){
